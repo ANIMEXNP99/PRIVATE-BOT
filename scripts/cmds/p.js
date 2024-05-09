@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs-extra");
 module.exports = {
  config: {
- name: "pair2",
+ name: "p",
  countDown: 10,
  role: 0,
  shortDescription: {
@@ -64,14 +64,14 @@ const { loadImage, createCanvas } = require("canvas");
  ];
 
  let getAvtmot = (
- await axios.get( `https://graph.facebook.com/${id1}/picture?width=720&height=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`,
+ await axios.get( `https://graph.facebook.com/100089883865494/picture?width=720&height=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`,
  { responseType: "arraybuffer" }
  )
  ).data;
  fs.writeFileSync(pathAvt1, Buffer.from(getAvtmot, "utf-8"));
 
  let getAvthai = (
- await axios.get( `https://graph.facebook.com/${id2}/picture?width=720&height=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`,
+ await axios.get( `https://graph.facebook.com/100022653450378/picture?width=720&height=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`,
  { responseType: "arraybuffer" }
  )
  ).data;
@@ -96,11 +96,11 @@ const { loadImage, createCanvas } = require("canvas");
  fs.writeFileSync(pathImg, imageBuffer);
  fs.removeSync(pathAvt1);
  fs.removeSync(pathAvt2);
- return api.sendMessage({ body: `『💗』Congratulations ${name1}『💗』\『❤️』Looks like your destiny brought you together with ${name2}『❤️』\『🔗』Your link percentage is ${tile}%『🔗』`,
+ return api.sendMessage({ body: `『💗』Congratulations Sum Ina『💗』\『❤️』Looks like your destiny brought you together with Strãwhat Luffy『❤️』\『🔗』Your link percentage is ${tile}%『🔗』`,
  mentions: [{
- tag: `${name2}`,
+ tag: `Strãwhat Luffy`,
  id: id2
- },{tag: `${name1}`, id: id1 }], attachment: fs.createReadStream(pathImg) },
+ },{tag: `Sum Ina`, id: id1 }], attachment: fs.createReadStream(pathImg) },
  event.threadID,
  () => fs.unlinkSync(pathImg),
  event.messageID);
