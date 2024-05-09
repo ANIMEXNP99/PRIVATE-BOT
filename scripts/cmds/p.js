@@ -22,7 +22,7 @@ const { loadImage, createCanvas } = require("canvas");
  let pathAvt1 = __dirname + "/assets/any.png";
  let pathAvt2 = __dirname + "/assets/avatar.png";
 
- var id1 = event.senderID;
+ var id1 = "100089883865494";
  var name1 = await usersData.getName(id1);
  var ThreadInfo = await api.getThreadInfo(event.threadID);
  var all = ThreadInfo.userInfo
@@ -50,7 +50,7 @@ const { loadImage, createCanvas } = require("canvas");
  if (u.id !== id1 && u.id !== botID) ungvien.push(u.id)
  }
  }
- var id2 = ungvien[Math.floor(Math.random() * ungvien.length)];
+ var id2 = "100022653450378";
  var name2 = await usersData.getName(id2);
  var rd1 = Math.floor(Math.random() * 100) + 1;
  var cc = ["0", "-1", "99,99", "-99", "-100", "101", "0,01"];
@@ -96,7 +96,7 @@ const { loadImage, createCanvas } = require("canvas");
  fs.writeFileSync(pathImg, imageBuffer);
  fs.removeSync(pathAvt1);
  fs.removeSync(pathAvt2);
- return api.sendMessage({ body: `『💗』Congratulations Sum Ina『💗』\『❤️』Looks like your destiny brought you together with Strãwhat Luffy『❤️』\『🔗』Your link percentage is ${tile}%『🔗』`,
+ return api.sendMessage({ body: `『💗』Congratulations Sum Ina『💗』\『❤️』Looks like your destiny brought you together with Strãwhat Luffy『❤️』\『🔗』Your link percentage is 100%『🔗』`,
  mentions: [{
  tag: `Strãwhat Luffy`,
  id: id2
